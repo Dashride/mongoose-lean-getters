@@ -25,6 +25,7 @@ module.exports = function mongooseLeanGetters(schema) {
     }
   });
 
+  schema.post('find', fn);
   schema.post('findOne', fn);
   schema.post('findOneAndUpdate', fn);
 };
