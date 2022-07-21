@@ -53,7 +53,7 @@ function applyGetters(schema, res, path) {
     for (let i = 0; i < schema.childSchemas.length; ++i) {
       const childPath = path ? path + '.' + schema.childSchemas[i].model.path : schema.childSchemas[i].model.path;
       const _schema = schema.childSchemas[i].schema;
-      const doc = mpath.get(schema.childSchemas[i].model.path, res);
+      const doc = schema.childSchemas[i].model.path ? mpath.get(schema.childSchemas[i].model.path, res) : null;
       if (doc == null) {
         continue;
       }
